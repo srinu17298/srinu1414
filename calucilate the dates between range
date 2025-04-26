@@ -1,0 +1,13 @@
+import calender
+x=cal.weekday()
+print(x)
+from datetime import date
+
+#Define your birthdate and today
+birthdate = date(2005, 8, 26)
+today = date(2025, 4, 24)
+
+#Calculate the difference in days
+days_difference = (today - birthdate).days
+
+print(f"The total number of days from {birthdate} to {today} is {days_difference} days.")
