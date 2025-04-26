@@ -1,0 +1,46 @@
+import random
+
+# Player details
+name1 = input("Enter Player 1 name: ")
+name2 = input("Enter Player 2 name: ")
+
+print("\nThe computer will pick a hidden random number for each turn.")
+print("Let the game begin!\n")
+
+# Scores for both players
+p1_score = 0
+p2_score = 0
+
+# Game logic
+for turn in range(5):  # Each player gets 5 turns
+    # Player 1's turn
+    print(f"\n{name1}, it's your turn ({5 - turn} turns left).")
+    guess1 = int(input("Enter your guess (1 to 10): "))
+    random_number1 = random.randint(1, 10)  # Computer picks a random number for Player 1
+    if guess1 == random_number1:
+        print("Correct guess!")
+        p1_score += 1
+    else:
+        print(f"Wrong guess! The correct number was {random_number1}.")
+
+    # Player 2's turn
+    print(f"\n{name2}, it's your turn ({5 - turn} turns left).")
+    guess2 = int(input("Enter your guess (1 to 10): "))
+    random_number2 = random.randint(1, 10)  # Computer picks a random number for Player 2
+    if guess2 == random_number2:
+        print("Correct guess!")
+        p2_score += 1
+    else:
+        print(f"Wrong guess! The correct number was {random_number2}.")
+
+# Announce the winner
+print("\nGame Over!")
+print(f"{name1}'s Score: {p1_score}")
+print(f"{name2}'s Score: {p2_score}")
+
+if p1_score > p2_score:
+    print(f"{name1} wins with {p1_score} points!")
+elif p2_score > p1_score:
+    print(f"{name2} wins with {p2_score} points!")
+else:
+    print("It's a tie!")
